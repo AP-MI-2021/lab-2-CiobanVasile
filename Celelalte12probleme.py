@@ -57,6 +57,27 @@ def is_palindrome(n):
         return True
     return False
 
+def is_superprime(n):
+    '''
+    -Determina daca un numar este superprim
+    Input:
+    -n,numar intreg,natural
+    Output:
+    -True, daca n este superprim,respectiv False daca n nu este superprim
+
+    '''
+    while n>0:
+        if(is_prime(n)==False): return False
+        n=n//10
+    return True
+
+def test_is_superprime():
+    assert is_superprime(133)==False
+    assert is_superprime(146)==False
+    assert is_superprime(246)==False
+    assert is_superprime(237)==False
+    assert is_superprime(233)==True
+
 def test_is_palindrome():
     assert is_palindrome(1234)==False
     assert is_palindrome(1221)==True
@@ -65,6 +86,7 @@ def test_get_age_in_days():
     assert get_age_in_days(date(1996,1,1))==9405
 
 def test_get_goldbach():
+
      assert get_goldbach(100)==(3,97)
      assert get_goldbach(6)==(3,3)
      assert get_goldbach(12)==(5,7)
@@ -72,3 +94,4 @@ def test_get_goldbach():
 test_get_goldbach()
 test_get_age_in_days()
 test_is_palindrome()
+test_is_superprime()
