@@ -68,3 +68,7 @@ def test_get_goldbach():
      assert get_goldbach(100)==(3,97)
      assert get_goldbach(6)==(3,3)
      assert get_goldbach(12)==(5,7)
+
+test_get_goldbach()
+test_get_age_in_days()
+test_is_palindrome()
