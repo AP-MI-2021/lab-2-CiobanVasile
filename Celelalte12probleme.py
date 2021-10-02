@@ -8,20 +8,15 @@ def is_prime(nr):
             return False
 
     return True
+'''def get_age_in_days(birthday):
+    data_nasterii_str_lst = birthday.split('/')
+    data_nasterii_int_lst = []
+    today=date.today()
+    for fiecare_data in data_nasterii_str_lst:
+        data_nasterii_int_lst.append(int(fiecare_data))
+    return (today.year-data_nasterii_int_lst[2]) * 365 + (data_nasterii_int_lst[1] - today.month) * 30 + data_nasterii_int_lst[0] - today.day
 
-def get_age_in_days(birthday):
-    '''
-    -Calculeaza varsta in zile
-    Input:
-    -date de nastere,data(ziua,luna,anul
-    Output:
-    -varsta in zile
-    '''
-
-    varsta_in_zile=date.today()-birthday
-    return varsta_in_zile.days
-
-
+'''
 def get_goldbach(n):
     '''
     -Determina perechile de numere p1,minim,p2,maxim,pentru care p1+p2=n
@@ -71,6 +66,28 @@ def is_superprime(n):
         n=n//10
     return True
 
+def get_leap_years(start: int, end: int) -> list[int]:
+    years_list=[]
+    i=start
+    for i in range(i,end+1):
+        if (i%4==0 and i%100!=0) or i%400==0:
+            years_list.append(i)
+
+
+    return years_list
+
+
+def is_antipalindrome(n) -> bool:
+    return True
+
+
+def test_get_leap_years():
+    assert get_leap_years(2000,2021)==[2000, 2004, 2008, 2012, 2016, 2020]
+    assert get_leap_years(1990,2001)==[1992, 1996, 2000]
+
+def test_is_antipalindrome():
+    assert is_antipalindrome(2773)==True
+
 def test_is_superprime():
     assert is_superprime(133)==False
     assert is_superprime(146)==False
@@ -82,8 +99,9 @@ def test_is_palindrome():
     assert is_palindrome(1234)==False
     assert is_palindrome(1221)==True
     assert is_palindrome(1100)==False
-def test_get_age_in_days():
-    assert get_age_in_days(date(1996,1,1))==9405
+
+#def test_get_age_in_days():
+ #   assert get_age_in_days(date(7/3/2002))==6732
 
 def test_get_goldbach():
 
@@ -92,6 +110,8 @@ def test_get_goldbach():
      assert get_goldbach(12)==(5,7)
 
 test_get_goldbach()
-test_get_age_in_days()
+#test_get_age_in_days()
 test_is_palindrome()
 test_is_superprime()
+test_is_antipalindrome()
+test_get_leap_years()
