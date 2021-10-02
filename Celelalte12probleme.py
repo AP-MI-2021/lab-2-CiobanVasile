@@ -8,6 +8,8 @@ def is_prime(nr):
             return False
 
     return True
+
+
 '''def get_age_in_days(birthday):
     data_nasterii_str_lst = birthday.split('/')
     data_nasterii_int_lst = []
@@ -78,7 +80,26 @@ def get_leap_years(start: int, end: int) -> list[int]:
 
 
 def is_antipalindrome(n) -> bool:
+    cifre_n = []
+    while n > 0:
+        cifre_n.append(n % 10)
+        n = n // 10
+
+    lenght=len(cifre_n)
+    '''
+    i=0
+    while i<=lenght//2:
+        if cifre_n[i] == cifre_n[lenght-1-i]:
+            return False
+        i=i+1
+'''
+    for i in range(0,lenght//2):
+          if cifre_n[i] == cifre_n[lenght-1-i]:
+              return False
+
     return True
+
+
 
 
 def test_get_leap_years():
@@ -103,6 +124,10 @@ def test_is_palindrome():
 #def test_get_age_in_days():
  #   assert get_age_in_days(date(7/3/2002))==6732
 
+def test_is_antipalindrome():
+    assert is_antipalindrome(2783) == True
+    assert is_antipalindrome(2773) == False
+
 def test_get_goldbach():
 
      assert get_goldbach(100)==(3,97)
@@ -115,3 +140,4 @@ test_is_palindrome()
 test_is_superprime()
 test_is_antipalindrome()
 test_get_leap_years()
+test_is_antipalindrome()
