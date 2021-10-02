@@ -101,6 +101,17 @@ def is_antipalindrome(n) -> bool:
 
 
 
+def get_perfect_squares(start: int, end: int) -> list[int]:
+    p_squares=[]
+    for i in range(start,end):
+        if i*i<=end:
+            p_squares.append(i*i)
+
+    return p_squares
+
+def test_get_perfect_squares():
+    assert get_perfect_squares(1,10)==[1, 4, 9]
+    assert get_perfect_squares(1,25)==[1, 4, 9, 16, 25]
 
 def test_get_leap_years():
     assert get_leap_years(2000,2021)==[2000, 2004, 2008, 2012, 2016, 2020]
@@ -141,3 +152,4 @@ test_is_superprime()
 test_is_antipalindrome()
 test_get_leap_years()
 test_is_antipalindrome()
+test_get_perfect_squares()

@@ -1,26 +1,15 @@
-def is_antipalindrome(n) -> bool:
-    cifre_n = []
-    while n > 0:
-        cifre_n.append(n % 10)
-        n = n // 10
+def get_perfect_squares(start: int, end: int) -> list[int]:
+    p_squares=[]
+    for i in range(start,end):
+        if i*i<=end:
+            p_squares.append(i*i)
 
-    lenght=len(cifre_n)
-    '''
-    i=0
-    while i<=lenght//2:
-        if cifre_n[i] == cifre_n[lenght-1-i]:
-            return False
-        i=i+1
-'''
-    for i in range(0,lenght//2):
-          if cifre_n[i] == cifre_n[lenght-1-i]:
-              return False
-
-    return True
-
-def test_is_antipalindrome():
-    assert is_antipalindrome(2783)==True
-    assert is_antipalindrome(2773)==False
+    return p_squares
 
 
-test_is_antipalindrome()
+
+def test_get_perfect_squares():
+    assert get_perfect_squares(1,10)==[1, 4, 9]
+    assert get_perfect_squares(1,25)==[1, 4, 9, 16, 25]
+
+test_get_perfect_squares()
