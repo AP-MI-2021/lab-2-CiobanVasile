@@ -69,6 +69,13 @@ def is_superprime(n):
     return True
 
 def get_leap_years(start: int, end: int) -> list[int]:
+    '''
+    -Determina anii bisecti
+    Input:
+    -anul de inceput, anul de final, numere intregi, naturale
+    Output:
+    - Anii bisecti
+    '''
     years_list=[]
     i=start
     for i in range(i,end+1):

@@ -1,15 +1,24 @@
-def get_perfect_squares(start: int, end: int) -> list[int]:
-    p_squares=[]
-    for i in range(start,end):
-        if i*i<=end:
-            p_squares.append(i*i)
+def cmmdc(x, y) :
+    while x != y:
+        if x > y :
+            x = x- y
+        else :
+            y = y -x
+    return x
+def cmmmmc(x,y) :
+    return (x*y)/cmmdc(x,y)
 
-    return p_squares
+def get_cmmmc(list) :
+    n=len(list)
+    c=cmmmmc(list[0],list[1])
+    for i in range(3,n):
+        Cm=cmmmmc(c,list[i-1])
+
+    return c
+
+def test():
+    assert get_cmmmc([5, 10, 15])==30
+
+test()
 
 
-
-def test_get_perfect_squares():
-    assert get_perfect_squares(1,10)==[1, 4, 9]
-    assert get_perfect_squares(1,25)==[1, 4, 9, 16, 25]
-
-test_get_perfect_squares()
