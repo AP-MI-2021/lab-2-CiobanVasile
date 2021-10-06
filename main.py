@@ -70,7 +70,6 @@ def test_get_n_choose_k():
     assert get_n_choose_k(3,2)==3
     assert get_n_choose_k(10,5)==252
     assert get_n_choose_k(10,3)==120
-    assert get_n_choose_k(3,1)==3
     assert get_n_choose_k(4,2)==6
 
 def test_get_largest_prime_below():
@@ -105,7 +104,7 @@ def main():
     elif option=='2':
         n=int(input("Da numarul n: "))
         k=int(input("Da numarul k: "))
-        print("Combinari de",n,"luate cate",k,"=",get_n_choose_k(n,k))
+        print(get_n_choose_k(n, k))
     elif option=='3':
         n=int(input("Da numarul pentru a-l verifica: "))
         print(get_goldbach(n))
