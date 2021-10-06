@@ -48,8 +48,7 @@ def get_largest_prime_below(n):
           if(is_prime(i)):
               return i
 
-
-def get_n_choose_k(n: int, k: int):
+def get_n_choose_k(n: int, k: int) -> int:
     '''
     -Calculează combinări de n luate câte k
     Input:
@@ -66,6 +65,7 @@ def get_n_choose_k(n: int, k: int):
 
 # am ales sa dau minim 3 teste corecte in functiile de test
 # am verificat si posibilele raspunsuri gresit si erori
+
 def test_get_n_choose_k():
     assert get_n_choose_k(3,2)==3
     assert get_n_choose_k(10,5)==252
