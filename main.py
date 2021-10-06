@@ -77,7 +77,6 @@ def test_get_largest_prime_below():
     assert get_largest_prime_below(22)==19
     assert get_largest_prime_below(5)==3
 
-
 def test_get_goldbach():
     assert get_goldbach(100)==(3,97)
     assert get_goldbach(6)==(3,3)
