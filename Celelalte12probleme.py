@@ -1,5 +1,6 @@
-from datetime import date
+#from datetime import date
 from math import sqrt
+
 
 def is_prime(nr):
     if nr < 2:
@@ -10,7 +11,7 @@ def is_prime(nr):
 
     return True
 
-'''
+"""
 
 def get_age_in_days(birthday):
     data_nasterii_str_lst = birthday.split('/')
@@ -19,22 +20,7 @@ def get_age_in_days(birthday):
     for fiecare_data in data_nasterii_str_lst:
         data_nasterii_int_lst.append(int(fiecare_data))
     return (today.year-data_nasterii_int_lst[2]) * 365 + (data_nasterii_int_lst[1] - today.month) * 30 + data_nasterii_int_lst[0] - today.day
-'''
-
-def get_goldbach(n):
-    '''
-    -Determina perechile de numere p1,minim,p2,maxim,pentru care p1+p2=n
-    Input:
-    n,nummar natural,intreg
-    Output:
-    -p1 si p2, numere prime,naturale
-    observam ca orice numar par diferit de 2 poate fi scris ca suma de doua numere prime
-    de ex: 6=3+3,8=5+3,10=5+5
-    '''
-    for i in range(3, n, 1):
-        if is_prime(i) == True and is_prime(n - i) == True:
-            return i, n - i
-
+"""
 
 def is_palindrome(n):
     '''
@@ -172,13 +158,6 @@ def test_is_antipalindrome():
     assert is_antipalindrome(2783) == True
     assert is_antipalindrome(2773) == False
 
-def test_get_goldbach():
-
-     assert get_goldbach(100)==(3,97)
-     assert get_goldbach(6)==(3,3)
-     assert get_goldbach(12)==(5,7)
-
-test_get_goldbach()
 #test_get_age_in_days()
 test_is_palindrome()
 test_is_superprime()

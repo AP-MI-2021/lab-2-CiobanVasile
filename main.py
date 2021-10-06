@@ -15,6 +15,22 @@ def is_prime(nr):
 
     return True
 
+
+def get_goldbach(n):
+    '''
+    -Determina perechile de numere p1,minim,p2,maxim,pentru care p1+p2=n
+    Input:
+    n,nummar natural,intreg
+    Output:
+    -p1 si p2, numere prime,naturale
+    observam ca orice numar par diferit de 2 poate fi scris ca suma de doua numere prime
+    de ex: 6=3+3,8=5+3,10=5+5
+    '''
+    for i in range(2, n, 1):
+        if is_prime(i) == True and is_prime(n - i) == True:
+            return i, n - i
+
+
 def get_largest_prime_below(n):
     '''
     -Determina ultimul număr prim mai mic decât un număr dat.
@@ -45,7 +61,7 @@ def get_n_choose_k(n: int, k: int):
 
     return c
 
-# am ales sa dau 5 teste corecte in functiile de test
+# am ales sa dau minim 3 teste corecte in functiile de test
 # am verificat si posibilele raspunsuri gresit si erori
 def test_get_n_choose_k():
     assert get_n_choose_k(3,2)==3
@@ -61,17 +77,23 @@ def test_get_largest_prime_below():
     assert get_largest_prime_below(22)==19
     assert get_largest_prime_below(5)==3
 
+
+def test_get_goldbach():
+    assert get_goldbach(100)==(3,97)
+    assert get_goldbach(6)==(3,3)
+    assert get_goldbach(12)==(5,7)
+
 #Testele intotdeauna se vor face inainte de main
 test_get_largest_prime_below()
 test_get_n_choose_k()
-
-
+test_get_goldbach()
 
 def main():
 
   while True:
     print("1.Cel mai mare numar strict mai mic decat n")
     print("2.Combinari de n luate cate k")
+    print("3.Conjectura lui Goldbach")
     print("x.Exit")
 
     option=input("Alege problema pe care o vrei rezolvata: ")
@@ -81,11 +103,14 @@ def main():
     elif option=='2':
         n=int(input("Da numarul n: "))
         k=int(input("Da numarul k: "))
-        print(get_n_choose_k(n,k))
+        print("Combinari de",n,"luate cate",k,"=",get_n_choose_k(n,k))
+    elif option=='3':
+        n=int(input("Da numarul pentru a-l verifica: "))
+        print(get_goldbach(n))
     elif option=='x':
         break
     else:
         print("Optiune gresita")
 
-
-main()
+if __name__ == '__main__':
+    main()
