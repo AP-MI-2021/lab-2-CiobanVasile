@@ -40,11 +40,10 @@ def get_largest_prime_below(n):
     -ultimul numar prim mai mic decat n
     '''
     #problema specifica faptul ca ultimul numar prim mai mic decat un numar dat,astfel numarul dat nu se va ferifica chiar daca acesta este prim
-    nr=n-1
-    while is_prime(nr)==False:
-        nr=nr-1
+    for i in range(n-1,2,-1):
+          if(is_prime(i)):
+              return i
 
-    return nr
 
 def get_n_choose_k(n: int, k: int):
     '''
