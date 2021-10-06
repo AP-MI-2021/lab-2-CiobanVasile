@@ -104,7 +104,9 @@ def main():
     elif option=='2':
         n=int(input("Da numarul n: "))
         k=int(input("Da numarul k: "))
-        print(get_n_choose_k(n, k))
+        a=n
+        b=k
+        print(get_n_choose_k(a, b))
     elif option=='3':
         n=int(input("Da numarul pentru a-l verifica: "))
         print(get_goldbach(n))
