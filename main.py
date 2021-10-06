@@ -9,7 +9,7 @@ def is_prime(nr):
     '''
     if nr < 2:            #daca numarul este mai mic decat 2 nu este prim
         return False
-    for i in range(2, nr):#o metoda mai eficienta ar fi sa mergem pana la i*i<=nr
+    for i in range(2, nr,1):#o metoda mai eficienta ar fi sa mergem pana la i*i<=nr
         if nr % i == 0:
             return False
 
