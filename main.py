@@ -40,6 +40,10 @@ def get_largest_prime_below(n):
     -ultimul numar prim mai mic decat n
     '''
     #problema specifica faptul ca ultimul numar prim mai mic decat un numar dat,astfel numarul dat nu se va ferifica chiar daca acesta este prim
+
+    if n==3:
+        return 2
+
     for i in range(n-1,2,-1):
           if(is_prime(i)):
               return i
